@@ -1,0 +1,584 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff8f1;
+    color: #292323;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 190, 190, 0.6), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255, 220, 150, 0.6), transparent 30%),
+        linear-gradient(135deg, #fff7f2, #ffe9df);
+
+    position: relative;
+}
+
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.2s ease;
+}
+
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #9a7777;
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+    font-size: clamp(50px, 9vw, 105px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -5px;
+}
+
+
+.hero h1 span {
+    display: block;
+    color: #e47777;
+}
+
+
+.hero-message {
+    max-width: 650px;
+    margin: 35px auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #665858;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 16px 30px;
+
+    background: #292323;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   FLOATING EMOJIS
+========================================= */
+
+.floating {
+    position: absolute;
+    font-size: 30px;
+
+    animation: float 5s ease-in-out infinite;
+
+    opacity: 0.75;
+}
+
+.floating:nth-child(1) {
+    top: 15%;
+    left: 8%;
+}
+
+.floating:nth-child(2) {
+    top: 25%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.floating:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.floating:nth-child(4) {
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   MESSAGE SECTION
+========================================= */
+
+.message-section {
+    padding: 120px 20px;
+
+    background: #292323;
+}
+
+
+.card {
+    max-width: 750px;
+    margin: auto;
+
+    background: #fffaf6;
+
+    padding: 60px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+
+    animation: fadeUp 1s ease;
+}
+
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+
+.card h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+
+.card p {
+    color: #665858;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+
+.card strong {
+    color: #d96666;
+}
+
+
+.signature {
+    margin-top: 35px;
+    font-weight: bold;
+    color: #e47777;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memories {
+    padding: 120px 7%;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+.section-heading p {
+    color: #e47777;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(40px, 6vw, 65px);
+    margin-bottom: 15px;
+}
+
+
+.section-heading span {
+    color: #766666;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   PHOTO GRID
+========================================= */
+
+.gallery {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-auto-rows: 280px;
+
+    gap: 18px;
+}
+
+
+.photo {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #eee;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.photo-large {
+    grid-row: span 2;
+}
+
+
+.photo-wide {
+    grid-column: span 2;
+}
+
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+.photo:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.18);
+}
+
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+
+.photo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.45),
+        transparent 50%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.photo:hover::after {
+    opacity: 1;
+}
+
+
+.photo-number {
+    position: absolute;
+
+    bottom: 15px;
+    left: 18px;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    opacity: 0;
+
+    z-index: 2;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.photo:hover .photo-number {
+    opacity: 1;
+}
+
+
+/* =========================================
+   BIRTHDAY WISH
+========================================= */
+
+.wish-section {
+    padding: 120px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffd9c8,
+            #f5b5a5
+        );
+
+    text-align: center;
+}
+
+
+.wish-card {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 70px 30px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    box-shadow: 0 25px 70px rgba(120, 70, 50, 0.15);
+}
+
+
+.cake {
+    font-size: 70px;
+
+    margin-bottom: 25px;
+
+    animation: bounce 2s infinite;
+}
+
+
+.wish-card h2 {
+    font-size: 42px;
+
+    margin-bottom: 30px;
+}
+
+
+.wish-card p {
+    color: #654f4f;
+
+    line-height: 2;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+
+.wish-card h3 {
+    font-size: 30px;
+
+    margin-top: 35px;
+
+    color: #c95f5f;
+}
+
+
+.confetti-text {
+    margin-top: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #765555;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 40px 20px;
+
+    background: #292323;
+
+    color: #cbbebe;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+footer span {
+    display: block;
+
+    color: #e98b8b;
+
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-message {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 40px 25px;
+    }
+
+    .card h2 {
+        font-size: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 220px;
+
+        gap: 12px;
+    }
+
+    .photo-large {
+        grid-row: span 1;
+    }
+
+    .photo-wide {
+        grid-column: span 2;
+    }
+
+    .wish-card {
+        padding: 55px 25px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 260px;
+    }
+
+    .photo-large,
+    .photo-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .floating {
+        font-size: 22px;
+    }
+
+}
+
